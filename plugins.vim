@@ -66,7 +66,6 @@ nnoremap <silent> <C-f> :call comfortable_motion#flick(200)<CR>
 nnoremap <silent> <C-b> :call comfortable_motion#flick(-200)<CR>
 
 
-"""""""""""""""""""""""""""""""""""""""
 " Cope
 """""""""""""""""""""""""""""""""""""""
 map <leader>cn :cn<cr>
@@ -74,7 +73,6 @@ map <leader>cp :cp<cr>
 map <leader>cc :botright cope<cr>
 
 
-"""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""
 map <leader>nn :NERDTreeToggle<cr>
@@ -82,26 +80,22 @@ map <leader>nf :NERDTreeFind<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
 
 
-"""""""""""""""""""""""""""""""""""""""
 " Tagbar
 """""""""""""""""""""""""""""""""""""""
 map <leader>nt :TagbarToggle<cr>
 
 
-"""""""""""""""""""""""""""""""""""""""
 " vim-mru
 """""""""""""""""""""""""""""""""""""""
 map <leader>f :MRU<CR>
 
 
-"""""""""""""""""""""""""""""""""""""""
 " yanckstack
 """""""""""""""""""""""""""""""""""""""
 nmap <c-p> <Plug>yankstack_substitute_older_paste
 nmap <c-n> <Plug>yankstack_substitute_newer_paste
 
 
-"""""""""""""""""""""""""""""""""""""""
 " snipmate
 """""""""""""""""""""""""""""""""""""""
 ino <c-j> <c-r>=snipMate#TriggerSnippet()<cr>
@@ -184,6 +178,9 @@ let g:netrw_dirhistmax  =10
 let g:netrw_dirhistcnt =1
 let g:netrw_dirhist_1='/etc/fonts/conf.avail'
 
+" snipmate
+"""""""""""""""""""""""""""""""""""""""
+let g:snipMate = { 'snippet_version': 1 } 
 
 " surround
 """""""""""""""""""""""""""""""""""""""
