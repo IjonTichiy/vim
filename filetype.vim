@@ -37,6 +37,13 @@ if has('autocmd')
         au BufNewFile,BufRead *.jinja set syntax=htmljinja
         au BufNewFile,BufRead *.mako set ft=mako
     aug end
+
+    aug write_file
+        if exists('*CleanExtraSpaces')
+            autocmd BufWritePre *.txt,*md,*.js,*.py,*.wiki,*.sh,*.coffee call CleanExtraSpaces()
+        endif
+    aug end
+
     aug filetype_python
         au!
         au FileType python inoremap <buffer> $r return 
@@ -55,15 +62,18 @@ if has('autocmd')
         au FileType python map <buffer> F :set foldmethod=indent<cr>
         au FileType python syn keyword pythonDecorator True None False self
     aug end
+
     aug filetype_cpp
         au!
         au FileType cpp set tw=79
         au FileType cpp set colorcolumn=80
         au FileType cpp set foldmethod=syntax
     aug end
+
     aug filetype_css
         au FileType css set omnifunc=csscomplete#CompleteCSS
     aug end
+
     aug filetype_tex
         au FileType tex let g:Tex_IgnoreLevel = 7
         au FileType tex let g:Tex_Leader = '='
