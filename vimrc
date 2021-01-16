@@ -220,7 +220,9 @@ let pluginpath='~/.config/vim/plugins'          " Set the plugin path
 set viminfo=%,<800,'10,/50,:100,h,f0,n~/.cache/vim/info/viminfo
 set runtimepath+=~/.config/vim                  " Set vims runtime path
 set shortmess=at
-" general
+set nocompatible                                " compatibili
+
+" General
 set backspace=eol,start,indent                  " Configure backspace
 set number                                      " Show line numbers
 set autoread                                    " Autoread on file changed
@@ -232,14 +234,16 @@ set lbr                                         " Linebreak on 500 characters
 set ai                                          " Enable auto ident
 set si                                          " Enable smart indent
 set nowrap                                      " Disable line wrapping
-" command mode
+
+" Command mode
 set history=1000                                " Command line history
 set wildmenu
 set hidden
 set cmdheight=2
 set wildignore=*.o,*~,*.pyc,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 set whichwrap+=<,>,h,l
-" appearence
+
+" Appearence
 set t_Co=256                                    " Enable 256 colors
 set so=12                                       " Horizontal scroll border
 set showmatch                                   " Highlight brackets
@@ -247,25 +251,29 @@ set mat=3                                       " match blink frequency
 set noerrorbells                                " No error sounds
 set novisualbell                                " Deactivate visual bell
 set t_vb=                                       " Deactivate visual bell
-" search and highlights
+
+" Search and highlights
 set incsearch                                   " Modern search behaviour
 set ignorecase                                  " Ignore case when searching
 set smartcase
 set hlsearch                                    " Highlight search results
 set magic                                       " Regular expressions magic
-" files
-set nobackup
-set nowb
-set noswapfile
+
+" Files
+set nobackup                                    " no backup file clutter
+set nowb                                        " no backup on write
+set noswapfile                                  " no swap files
 set encoding=utf8                               " Set the encoding
 set langmenu=en                                 " Menu language
 set ffs=unix,dos,mac
+
 " Enable infinite undo
 try
   set undodir=~/.cache/vim/undo/
   set undofile
 catch
 endtry
+
 " Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab
@@ -324,9 +332,6 @@ if has('autocmd')
         autocmd!
         autocmd! BufWritePost $MYVIMRC nested source %
     augroup end
-
-    autocmd BufWritePre *.txt,*md,*.js,*.py,*.wiki,*.sh,*.coffee \
-        :call CleanExtraSpaces()
 endif
 
 
