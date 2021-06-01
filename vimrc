@@ -28,14 +28,19 @@
 "
 " here are the mappings:
 "
-"       ee : ~ /.vimrc evf: ~ /.config/vim/filetypes.vim evp: ~
-"       /.config/vim/plugins.vim evh: ~ /.config/vim/functions.vim ea : ~
-"       /.config/alacritty/alacritty.yml ebb: ~ /.bashrc eba: ~
-"       /.config/bash/alias ebp: ~ /.bash_profile ebh: ~
-"       /.config/bash/functions es : ~ /.screenrc ew : ~ /.config/sway/config
-"       et : ~ /.config/tridactyl/tridactylrc el : ~
-"       /.config/liquidprompt/liquidpromptrc ec : Access your cronjobs (man
-"       crontab)
+"       ee : ~ /.vimrc evf: ~ /.config/vim/filetypes.vim 
+"       evp: ~ /.config/vim/plugins.vim 
+"       evh: ~ /.config/vim/functions.vim 
+"       ea : ~ /.config/alacritty/alacritty.yml 
+"       ebb: ~ /.bashrc 
+"       eba: ~ /.config/bash/alias 
+"       ebp: ~ /.bash_profile 
+"       ebh: ~ /.config/bash/functions 
+"       es : ~ /.screenrc 
+"       ew : ~ /.config/sway/config
+"       et : ~ /.config/tridactyl/tridactylrc 
+"       el : ~ /.config/liquidprompt/liquidpromptrc 
+"       ec : Access your cronjobs (man crontab)
 "
 " *Exceptions may occur
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -85,6 +90,8 @@ nnoremap <leader>et :e $TRIDACTYLRC<CR>
 
 " Access the liquidprompt rc
 nnoremap <leader>el :e $LIQUIDPROMPTRC<CR>
+
+nnoremap <leader>xp :e ~/.cache/python/tmp.py<CR>
 
 
 """""""""""""""""""""""""""""""""""""""
@@ -234,6 +241,9 @@ set lbr                                         " Linebreak on 500 characters
 set ai                                          " Enable auto ident
 set si                                          " Enable smart indent
 set nowrap                                      " Disable line wrapping
+
+set tw=79                                       " set textwidth
+set colorcolumn=+1                              " line at the end of tw
 
 " Command mode
 set history=1000                                " Command line history
