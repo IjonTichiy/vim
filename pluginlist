@@ -14,3 +14,7 @@ git clone https://github.com/honza/vim-snippets /home/ijon/.config/vim/plugins/s
 git clone https://github.com/tpope/vim-fugitive /home/ijon/.config/vim/plugins/fugitive.vim
 git clone https://github.com/godlygeek/tabular /home/ijon/.config/vim/plugins/tabular.vim
 git clone https://github.com/MarcWeber/vim-addon-mw-utils /home/ijon/.config/vim/plugins/mw-utils.vim
+git clone https://github.com/sillybun/vim-repl /home/ijon/.config/vim/plugins/repl.vim
+git clone https://github.com/ivanov/vim-ipython /home/ijon/.config/vim/plugins/ipython.vim
+git clone https://github.com/hsitz/PyScratch /home/ijon/.config/vim/plugins/PyScratch.vim
+git clone https://github.com/jpalardy/vim-slime /home/ijon/.config/vim/plugins/slime.vim

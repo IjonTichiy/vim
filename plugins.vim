@@ -155,7 +155,12 @@ endif
 
 " Git gutter (Git diff)
 """""""""""""""""""""""""""""""""""""""
-let g:gitgutter_enabled=0
+let g:gitgutter_enabled=1
+
+
+" Slime
+"""""""""""""""""""""""""""""""""""""""
+let g:slime_target = "screen"
 
 
 " Nerd Tree
@@ -196,6 +201,17 @@ let g:TagbarWinSize=25
 """""""""""""""""""""""""""""""""""""""
 let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
 set grepprg=/bin/grep\ -nH
+
+
+" YouCompleteMe
+"""""""""""""""""""""""""""""""""""""""
+let g:ycm_python_interpreter_path = '/usr/bin/python3'
+let g:ycm_python_sys_path = []
+let g:ycm_extra_conf_vim_data = [
+  \  'g:ycm_python_interpreter_path',
+  \  'g:ycm_python_sys_path'
+  \]
+let g:ycm_global_ycm_extra_conf = '~/.config/vim/global_extra_conf.py'
 
 
 """""""""""""""""""""""""""""""""""""""
