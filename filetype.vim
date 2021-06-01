@@ -31,6 +31,11 @@ let g:Tex_MultipleCompileFormats = 'pdf'
 " Autocommands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('autocmd')
+    aug open_file
+        au!
+        au BufRead mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+    aug end
+
     aug new_file
         au!
         au BufNewFile *.py put =\"#!/usr/bin/env python\<nl># -*- coding: utf-8 -*-\"|$
@@ -46,21 +51,20 @@ if has('autocmd')
 
     aug filetype_python
         au!
-        au FileType python inoremap <buffer> $r return 
-        au FileType python inoremap <buffer> $i import 
-        au FileType python inoremap <buffer> $p print 
+        " maps
+        au FileType python map <C-CR> ggVG<c-c><c-c>
+        au FileType python map <CR> !python % <CR>
+        " au FileType python map <M-CR> :!clear; pudb %<Enter>
+        " au FileType python map !pudb % <M-CR>
+        " au FileType python map <buffer> F :set foldmethod=indent<cr>
+        au FileType python syn keyword pythonDecorator True None False self
+
+        " " settings
         au FileType python set cindent
         au FileType python set cinkeys-=0#
         au FileType python set indentkeys-=0#
-        au FileType python set tw=79
-        au FileType python set colorcolumn=+1
+
         au FileType python setlocal formatprg=autopep8\ -
-        au FileType python map <CR> :!clear; python %<Enter>
-        au FileType python map !python % <CR>
-        au FileType python map <M-CR> :!clear; pudb %<Enter>
-        au FileType python map !pudb % <M-CR>
-        au FileType python map <buffer> F :set foldmethod=indent<cr>
-        au FileType python syn keyword pythonDecorator True None False self
     aug end
 
     aug filetype_cpp
