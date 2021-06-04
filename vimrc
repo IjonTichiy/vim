@@ -38,6 +38,7 @@
 "       ebh: ~ /.config/bash/functions 
 "       es : ~ /.screenrc 
 "       ew : ~ /.config/sway/config
+"       ei : ~ /.config/i3/config
 "       et : ~ /.config/tridactyl/tridactylrc 
 "       el : ~ /.config/liquidprompt/liquidpromptrc 
 "       ec : Access your cronjobs (man crontab)
@@ -84,6 +85,9 @@ nnoremap <leader>es :e $SCREENRC<CR>
 
 " Access the sway window manager config
 nnoremap <leader>ew :e $SWAYRC<CR>
+
+" Access the sway window manager config
+nnoremap <leader>ei :e $I3RC<CR>
 
 " Access configuration for firefox plugin tridactyl
 nnoremap <leader>et :e $TRIDACTYLRC<CR>
