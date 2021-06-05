@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " The user configuration file for vim.
@@ -27,21 +27,39 @@
 "   <X> first letter of the source file <Y> possible subfile
 "
 " here are the mappings:
+"""""""""""""""""""""""""""""""""""""""
+" SYSTEM:
+"       ec : Access your cronjobs (man crontab)
 "
-"       ee : ~ /.vimrc evf: ~ /.config/vim/filetypes.vim 
+" VIM:
+"       ee : ~ /.config/vim/vimrc 
+"       evf: ~ /.config/vim/filetypes.vim 
 "       evp: ~ /.config/vim/plugins.vim 
 "       evh: ~ /.config/vim/functions.vim 
+"       ey : ~ /.config/vim/global_ycm_config.py
+"
+" TERMINAL:
 "       ea : ~ /.config/alacritty/alacritty.yml 
-"       ebb: ~ /.bashrc 
+"       ebb: ~ /.config/bash/.bashrc 
 "       eba: ~ /.config/bash/alias 
-"       ebp: ~ /.bash_profile 
-"       ebh: ~ /.config/bash/functions 
-"       es : ~ /.screenrc 
-"       ew : ~ /.config/sway/config
-"       ei : ~ /.config/i3/config
-"       et : ~ /.config/tridactyl/tridactylrc 
+"       ebp: ~ /.config/bash/bash_profile 
+"       ebh: ~ /.config/bash/helper
 "       el : ~ /.config/liquidprompt/liquidpromptrc 
-"       ec : Access your cronjobs (man crontab)
+"
+" SCREEN:
+"       es : ~ /.config/screen/screenrc 
+"
+" XORG_DESKTOP:
+"       exi : ~ /.config/xorg/xinitrc
+"       exm : ~ /.config/xorg/xmodmap
+"       exr : ~ /.config/xorg/xresources
+"       ei : ~ /.config/i3/config
+"
+" SWAY_DESKTOP:
+"       ew : ~ /.config/sway/config
+"
+" APPLICATIONS:
+"       et : ~ /.config/tridactyl/tridactylrc 
 "
 " *Exceptions may occur
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -95,6 +113,18 @@ nnoremap <leader>et :e $TRIDACTYLRC<CR>
 " Access the liquidprompt rc
 nnoremap <leader>el :e $LIQUIDPROMPTRC<CR>
 
+" Access the xinitrc
+nnoremap <leader>exi :e $XINITRC<CR>
+
+" Access the xmodmap
+nnoremap <leader>exm :e $XMODMAP<CR>
+
+" Access the xmodmap
+nnoremap <leader>exm :e $XRESOURCES<CR>
+
+" Access the ycm global debug conf
+nnoremap <leader>ey :e $VIM_YCM<CR>
+
 nnoremap <leader>xp :e ~/.cache/python/tmp.py<CR>
 
 
@@ -102,9 +132,10 @@ nnoremap <leader>xp :e ~/.cache/python/tmp.py<CR>
 " global
 """""""""""""""""""""""""""""""""""""""
 " Clipboard support
-xnoremap "+y y:call system("wl-copy", @")<cr>
-nnoremap "+p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', '', 'g')<cr>p
-nnoremap "+p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v><C-m>', '', 'g')<cr>p
+" wayland:
+" xnoremap "+y y:call system("wl-copy", @")<cr>
+" nnoremap "+p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', '', 'g')<cr>p
+" nnoremap "+p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v><C-m>', '', 'g')<cr>p
 
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
@@ -319,11 +350,11 @@ source $VIM_HELPERS
 
 " This Vim script deletes all the menus, so that they can be redefined.
 " Warning: This also deletes all menus defined by the user!
-source $VIMRUNTIME/delmenu.vim
+" source $VIMRUNTIME/delmenu.vim
 
 " Vim support file to define the default menus
 " You can also use this as a start for your own set of menus.
-source $VIMRUNTIME/menu.vim
+" source $VIMRUNTIME/menu.vim
 
 
 """""""""""""""""""""""""""""""""""""""
