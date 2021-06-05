@@ -346,7 +346,7 @@ filetype indent on
 source $VIM_FILETYPES
 
 " location of additional vimrcs
-source $VIM_HELPERS
+source $VIM_HELPER
 
 " This Vim script deletes all the menus, so that they can be redefined.
 " Warning: This also deletes all menus defined by the user!
