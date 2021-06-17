@@ -137,7 +137,7 @@ let g:bufExplorerSortBy='name'
 
 "vim_mru_files
 """""""""""""""""""""""""""""""""""""""
-let MRU_File="/home/ijon/.cache/vim/mru/vim_mru_files"
+let MRU_File="/home/user/.cache/vim/mru/vim_mru_files"
 let MRU_Max_Entries = 1000
 
 

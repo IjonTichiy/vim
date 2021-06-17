@@ -119,8 +119,6 @@ nmap <leader>r :source ~/.vimrc<CR>
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 
-" Fast saving
-nmap <leader>w :w!<cr>
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
@@ -311,7 +309,7 @@ filetype indent on
 source $VIM_FILETYPES
 
 " location of additional vimrcs
-source $VIM_HELPERS
+source $VIM_HELPER
 
 " This Vim script deletes all the menus, so that they can be redefined.
 " Warning: This also deletes all menus defined by the user!
@@ -349,3 +347,6 @@ endif
 " Abbreviations
 """""""""""""""""""""""""""""""""""""""
 ab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
+
+" Fast saving
+map <leader>w :w!<cr>

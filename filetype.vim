@@ -53,7 +53,7 @@ if has('autocmd')
         au!
         " maps
         au FileType python map <C-CR> ggVG<c-c><c-c>
-        au FileType python map <CR> !python % <CR>
+        au FileType python map <CR> :!clear; python.exe -m pdb -c continue % <CR>
         " au FileType python map <M-CR> :!clear; pudb %<Enter>
         " au FileType python map !pudb % <M-CR>
         " au FileType python map <buffer> F :set foldmethod=indent<cr>
